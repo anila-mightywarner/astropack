@@ -160,7 +160,13 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
 
 
     $(document).ready(function () {
+        console.log('Contact form script loaded');
+        console.log('Contact form found:', $('.contact-enquiry'));
+
         $(document).on('submit', '.contact-enquiry', function (e) {
+            console.log('Submit button clicked');
+            console.log('Form submit event triggered');
+            
             e.preventDefault();
             var form = $(this);
             var submitBtn = form.find('input[type="submit"], button[type="submit"]');
@@ -175,19 +181,23 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
                     grecaptcha.ready(function() {
                         try {
                             grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
+                                console.log('reCAPTCHA response:', token);
                                 if ($("#secondCaptcha").length > 0) $("#secondCaptcha").val(token);
                                 if ($("#secondCaptcha2025").length > 0) $("#secondCaptcha2025").val(token);
                                 currentForm.trigger('submit');
                             }).catch(function(error) {
+                                console.error('Unexpected Error:', error);
                                 console.error("reCAPTCHA Execute Error:", error);
                                 alert("reCAPTCHA verification failed. Check the console for details.");
                             });
                         } catch (innerError) {
+                            console.error('Unexpected Error:', innerError);
                             console.error("reCAPTCHA API Error:", innerError);
                             alert("reCAPTCHA API Error: This usually happens if a v2 Invisible key is used instead of a v3 key. Please check your Google reCAPTCHA Admin Console and ensure the key is explicitly 'reCAPTCHA v3'.");
                         }
                     });
                 } catch (e) {
+                    console.error('Unexpected Error:', e);
                     console.error("reCAPTCHA Ready Error:", e);
                     alert("reCAPTCHA is not loaded properly. Refresh the page.");
                 }
@@ -195,26 +205,34 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
             }
 
             var str = form.serialize() + '&_csrf-frontend=' + encodeURIComponent(APP_CONFIG.csrf);
+            console.log('Form data:', str);
             
             submitBtn.prop('disabled', true);
             if (submitBtn.is('input')) { submitBtn.val('Submitting...'); } else { submitBtn.text('Submitting...'); }
             
+            console.log('Sending AJAX request...');
             $.ajax({
                     type: "POST",
                     url: APP_CONFIG.homeUrl + 'site/contact-enquiry',
                     data: str,
                     success: function (data)
                     {
+                        console.log('AJAX Success:', data);
                         if (data == 1) {
                             form.append('<div id="contact-alert" style="color: #28a745;font-weight: 600;margin-top: 10px;">Your Request Sent Successfully</div>');
-                            setTimeout(function() { location.reload(); }, 2000);
+                            setTimeout(function() { 
+                                console.log('Reloading page...');
+                                location.reload(); 
+                            }, 2000);
                         } else {
                             submitBtn.prop('disabled', false);
                             if (submitBtn.is('input')) { submitBtn.val(originalBtnText); } else { submitBtn.text(originalBtnText); }
                             alert("Submission failed. Please try again.");
                         }
                     },
-                    error: function () {
+                    error: function (xhr) {
+                        console.error('AJAX Error:', xhr.responseText);
+                        console.error('Status Code:', xhr.status);
                         submitBtn.prop('disabled', false);
                         if (submitBtn.is('input')) { submitBtn.val(originalBtnText); } else { submitBtn.text(originalBtnText); }
                         alert("A server error occurred. Please try again later.");

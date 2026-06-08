@@ -49,7 +49,7 @@ class AppAsset extends AssetBundle
 
         $route = $this->getCurrentRoute();
         
-        $scriptVersion = '20260608_7';
+        $scriptVersion = '20260608_8';
         $this->js[2] = 'assets/js/script.min.js?v=' . $scriptVersion;
 
         $this->css[] = 'assets/css/stylesheet5.min.css?v=2.0';
