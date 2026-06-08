@@ -1,0 +1,46 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+/* @var $this yii\web\View */
+/* @var $model common\models\KeyFeatures */
+/* @var $form yii\widgets\ActiveForm */
+?>
+
+<div class="key-features-form form-inline">
+    <?= \common\components\AlertMessageWidget::widget() ?>
+    <?php $form = ActiveForm::begin(); ?>
+    <div class="row">
+        <div class='col-md-6 col-sm-6 col-xs-12 left_padd'>
+            <?php
+            $products = \common\models\Products::find()->all();
+            $model->product_id = $product;
+            ?>
+            <?= $form->field($model, 'product_id')->dropDownList(yii\helpers\ArrayHelper::map($products, 'id', 'product_title'), ['readonly' => TRUE]) ?>
+        </div>
+        <div class='col-md-6 col-sm-6 col-xs-12 left_padd'>
+            <?= $form->field($model, 'feature')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class='col-md-12 col-sm-12 col-xs-12 left_padd'>
+            <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+        </div>
+        <div class='col-md-6 col-sm-6 col-xs-12 left_padd'>
+            <?= $form->field($model, 'status')->dropDownList(['1' => 'Enabled', '0' => 'Disabled']) ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class='col-md-12 col-sm-12 col-xs-12'>
+            <div class="form-group">
+                <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-block btn-success btn-sm', 'style' => 'float:right;']) ?>
+            </div>
+        </div>
+    </div>
+    <?php ActiveForm::end(); ?>
+
+</div>
+<script>
+    $(document).ready(function () {
+        $("#keyfeatures-product_id").prop("disabled", true);
+    });
+</script>

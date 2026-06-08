@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /admin
+Disallow: https://www.astropackgulf.com/site/products?brand=packway
+Disallow: https://www.astropackgulf.com/site/products?brand=solaris-laser
+Disallow: https://www.astropackgulf.com/site/products?brand=savema-tto-printer
+Disallow: https://www.astropackgulf.com/site/products?brand=ebs-ink-jet-systems
+Disallow: https://www.astropackgulf.com/site/products?brand=ipac-vffs-machines
+Disallow: https://www.astropackgulf.com/site/products?brand=omag
+Disallow: https://www.astropackgulf.com/site/products?brand=thermofisher-scientific
+Disallow: https://www.astropackgulf.com/site/products?brand=ips
+Disallow: https://www.astropackgulf.com/site/products?brand=henkovac
+Sitemap: https://www.astropackgulf.com/sitemap.xml

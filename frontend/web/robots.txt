@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+Sitemap Url: https://www.astropackgulf.com/sitemap.xml
