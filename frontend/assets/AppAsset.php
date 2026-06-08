@@ -24,7 +24,7 @@ class AppAsset extends AssetBundle
     public $js = [
         'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js',
         'assets/js/bootstrap.min.js',
-        'assets/js/script.min.js?v=1.33',
+        'assets/js/script.min.js', // Version is appended in init()
     ];
 
     public $depends = [];
@@ -48,6 +48,9 @@ class AppAsset extends AssetBundle
         parent::init();
 
         $route = $this->getCurrentRoute();
+        
+        $scriptVersion = '20260608_4';
+        $this->js[2] = 'assets/js/script.min.js?v=' . $scriptVersion;
 
         $this->css[] = 'assets/css/stylesheet5.min.css?v=2.0';
 

@@ -101,7 +101,7 @@ $contact_addresses = \common\models\ContactAddress::find()->where(['status' => 1
                             <div class="col-lg-12">
                                 <div class="form-group">
 
-                                    <div class="g-recaptcha-second" data-sitekey="6LeV3s8UAAAAAF-aBw62xSSGAQSbRPvcmrVuAAT1" id="RecaptchaField1"></div>
+                                    <div class="g-recaptcha-second" data-sitekey="6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w" id="RecaptchaField1"></div>
                                     <input type="hidden" class="hiddenRecaptcha" name="secondCaptcha" id="secondCaptcha">
                                 </div>
                             </div>

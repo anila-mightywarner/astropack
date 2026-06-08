@@ -4,105 +4,114 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
 
     $(document).ready(function () {
 
-        $(".Brands-logo").slick({
-            infinite: true,
-            vertical: false,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            arrows: false,
-            dots: false,
-            pauseOnHover: true,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            adaptiveHeight: true,
-            prevArrow: '<button class="slide-prev"></button>',
-            nextArrow: '<button class="slide-nxt"></button>',
-            responsive: [{
-                    breakpoint: 992,
-                    settings: {
-                        arrows: false,
-                        slidesToShow: 3
-                    }
-                }, {
-                    breakpoint: 768,
-                    settings: {
-                        arrows: false,
-                        slidesToShow: 2
-                    }
-                }
+        if ($.fn.slick) {
+            if ($(".Brands-logo").length > 0) {
+                $(".Brands-logo").slick({
+                    infinite: true,
+                    vertical: false,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    arrows: false,
+                    dots: false,
+                    pauseOnHover: true,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    adaptiveHeight: true,
+                    prevArrow: '<button class="slide-prev"></button>',
+                    nextArrow: '<button class="slide-nxt"></button>',
+                    responsive: [{
+                            breakpoint: 992,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 3
+                            }
+                        }, {
+                            breakpoint: 768,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 2
+                            }
+                        }
 
-            ]
+                    ]
 
-        });
-        $(".testimonials-slider").slick({
-            infinite: true,
-            vertical: false,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            arrows: false,
-            dots: false,
-            pauseOnHover: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            adaptiveHeight: true,
-            prevArrow: '<button class="slide-prev"></button>',
-            nextArrow: '<button class="slide-nxt"></button>',
+                });
+            }
+            if ($(".testimonials-slider").length > 0) {
+                $(".testimonials-slider").slick({
+                    infinite: true,
+                    vertical: false,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    arrows: false,
+                    dots: false,
+                    pauseOnHover: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    adaptiveHeight: true,
+                    prevArrow: '<button class="slide-prev"></button>',
+                    nextArrow: '<button class="slide-nxt"></button>',
 
-        });
-        $(".clients-slider").slick({
-            infinite: true,
-            vertical: false,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            arrows: false,
-            dots: false,
-            pauseOnHover: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            adaptiveHeight: true,
-            prevArrow: '<button class="slide-prev"></button>',
-            nextArrow: '<button class="slide-nxt"></button>',
-            responsive: [{
-                    breakpoint: 576,
-                    settings: {
-                        arrows: false,
-                        slidesToShow: 2
-                    }
-                },
-            ]
+                });
+            }
+            if ($(".clients-slider").length > 0) {
+                $(".clients-slider").slick({
+                    infinite: true,
+                    vertical: false,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    arrows: false,
+                    dots: false,
+                    pauseOnHover: true,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    adaptiveHeight: true,
+                    prevArrow: '<button class="slide-prev"></button>',
+                    nextArrow: '<button class="slide-nxt"></button>',
+                    responsive: [{
+                            breakpoint: 576,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 2
+                            }
+                        },
+                    ]
 
-        });
-        $(".Related-product").slick({
-            infinite: true,
-            vertical: false,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            arrows: false,
-            dots: false,
-            pauseOnHover: true,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            adaptiveHeight: true,
-            prevArrow: '<button class="slide-prev"></button>',
-            nextArrow: '<button class="slide-nxt"></button>',
-            responsive: [{
-                    breakpoint: 992,
-                    settings: {
-                        arrows: false,
-                        slidesToShow: 3
-                    }
-                }, {
-                    breakpoint: 768,
-                    settings: {
-                        arrows: false,
-                        slidesToShow: 2
-                    }
-                }
+                });
+            }
+            if ($(".Related-product").length > 0) {
+                $(".Related-product").slick({
+                    infinite: true,
+                    vertical: false,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    arrows: false,
+                    dots: false,
+                    pauseOnHover: true,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    adaptiveHeight: true,
+                    prevArrow: '<button class="slide-prev"></button>',
+                    nextArrow: '<button class="slide-nxt"></button>',
+                    responsive: [{
+                            breakpoint: 992,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 3
+                            }
+                        }, {
+                            breakpoint: 768,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 2
+                            }
+                        }
 
-            ]
+                    ]
 
-        });
-
+                });
+            }
+        }
     });
 
     if ($(window).width() >= 992) {
@@ -123,9 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
 
 
     /***************************SLIDER_PRO**************************/
-    $('#slider-pro').sliderPro();
-
-    if ($('#slider-pro').length > 0) {
+    if ($.fn.sliderPro && $('#slider-pro').length > 0) {
         $('#slider-pro').sliderPro({
             width: 750,
             height: 630,
@@ -155,37 +162,53 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
     $(document).ready(function () {
         $(document).on('submit', '.contact-enquiry', function (e) {
             e.preventDefault();
-            var str = $(this).serialize();
-            var res =$("#secondCaptcha").val();
-            if (res == "" || res == undefined || res.length == 0)
-            {
-                e.preventDefault();
-                if ($("#RecaptchaField1").next(".validation").length == 0) // only add if not added
-                {
-                    $("#RecaptchaField1").after("<div class='validation' style='color:#a94442;font-size: 13px;margin-bottom: 14px;'>Please verify that you are not a robot</div>");
-                }
-            }else{
-            $.ajax({
-                type: "POST",
-                url: '<?= Yii::$app->homeUrl; ?>site/contact-enquiry',
-                data: str,
-                success: function (data)
-                {
-                    // $('.validation').remove();
-                    if (data == 1) {
-                         $("#SuccessModal").addClass("show");
-                    $("#SuccessModal").css("display", "block");
-                    $('#SuccessModal').modal({backdrop: 'static', keyboard: false});
-                    }
-                    // $('#name').val("");
-                    // $('#email').val("");
-                    // $('#phone').val("");
-                    // $('#company').val("");
-                    // $('#message').val("");
-                    // $('#email-alert').delay(5000).fadeOut('slow');
-                }
-            });
+            var form = $(this);
+            var submitBtn = form.find('input[type="submit"], button[type="submit"]');
+            var originalBtnText = submitBtn.is('input') ? submitBtn.val() : submitBtn.text();
+
+            var res = $("#secondCaptcha").length > 0 ? $("#secondCaptcha").val() : "";
+            var res2025 = $("#secondCaptcha2025").length > 0 ? $("#secondCaptcha2025").val() : "";
+            
+            if (!res && !res2025) {
+                currentForm = form;
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
+                        if ($("#secondCaptcha").length > 0) $("#secondCaptcha").val(token);
+                        if ($("#secondCaptcha2025").length > 0) $("#secondCaptcha2025").val(token);
+                        currentForm.trigger('submit');
+                    });
+                });
+                return;
             }
+
+            var str = form.serialize() + '&_csrf-frontend=' + encodeURIComponent(APP_CONFIG.csrf);
+            
+            submitBtn.prop('disabled', true);
+            if (submitBtn.is('input')) { submitBtn.val('Submitting...'); } else { submitBtn.text('Submitting...'); }
+            
+            $.ajax({
+                    type: "POST",
+                    url: APP_CONFIG.homeUrl + 'site/contact-enquiry',
+                    data: str,
+                    success: function (data)
+                    {
+                        if (data == 1) {
+                            form.append('<div id="contact-alert" style="color: #28a745;font-weight: 600;margin-top: 10px;">Your Request Sent Successfully</div>');
+                            setTimeout(function() { location.reload(); }, 2000);
+                        } else {
+                            submitBtn.prop('disabled', false);
+                            if (submitBtn.is('input')) { submitBtn.val(originalBtnText); } else { submitBtn.text(originalBtnText); }
+                            alert("Submission failed. Please try again.");
+                        }
+                    },
+                    error: function () {
+                        submitBtn.prop('disabled', false);
+                        if (submitBtn.is('input')) { submitBtn.val(originalBtnText); } else { submitBtn.text(originalBtnText); }
+                        alert("A server error occurred. Please try again later.");
+                        if ($("#secondCaptcha").length > 0) $("#secondCaptcha").val("");
+                        if ($("#secondCaptcha2025").length > 0) $("#secondCaptcha2025").val("");
+                    }
+                });
         });
         
         $(document).on('click', '#modal-dismiss', function (e) {
@@ -193,49 +216,86 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
         });
         
         $(document).on('submit', '.product-enquiry1', function (e) {
-            var res = $("#secondCaptcha").val();
-            if (res == "" || res == undefined || res.length == 0)
+            var form = $(this);
+            var submitBtn = form.find('input[type="submit"], button[type="submit"]');
+            var originalBtnText = submitBtn.is('input') ? submitBtn.val() : submitBtn.text();
+
+            var res = $("#secondCaptcha").length > 0 ? $("#secondCaptcha").val() : "";
+            if (!res)
             {
                 e.preventDefault();
-                if ($("#RecaptchaField1").next(".validation").length == 0) // only add if not added
-                {
-                    $("#RecaptchaField1").after("<div class='validation' style='color:#a94442;font-size: 13px;margin-bottom: 14px;'>Please verify that you are not a robot</div>");
-                }
+                currentForm = form;
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
+                        if ($("#secondCaptcha").length > 0) $("#secondCaptcha").val(token);
+                        currentForm.trigger('submit');
+                    });
+                });
+                return;
             } else {
                 $('.validation').remove();
+                setTimeout(function() {
+                    submitBtn.prop('disabled', true);
+                    if (submitBtn.is('input')) { submitBtn.val('Submitting...'); } else { submitBtn.text('Submitting...'); }
+                }, 0);
             }
         });
 
         $(document).on('submit', '.product-enquiry2', function (e) {
-            var res = $("#firstCaptcha").val();
-            if (res == "" || res == undefined || res.length == 0)
+            var form = $(this);
+            var submitBtn = form.find('input[type="submit"], button[type="submit"]');
+            var originalBtnText = submitBtn.is('input') ? submitBtn.val() : submitBtn.text();
+
+            var res = $("#firstCaptcha").length > 0 ? $("#firstCaptcha").val() : "";
+            if (!res)
             {
                 e.preventDefault();
-                if ($("#RecaptchaField2").next(".validation").length == 0) // only add if not added
-                {
-                    $("#RecaptchaField2").after("<div class='validation' style='color:#a94442;font-size: 13px;margin-bottom: 14px;'>Please verify that you are not a robot</div>");
-                }
+                currentForm = form;
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
+                        if ($("#firstCaptcha").length > 0) $("#firstCaptcha").val(token);
+                        currentForm.trigger('submit');
+                    });
+                });
+                return;
             } else {
                 $('.validation').remove();
+                setTimeout(function() {
+                    submitBtn.prop('disabled', true);
+                    if (submitBtn.is('input')) { submitBtn.val('Submitting...'); } else { submitBtn.text('Submitting...'); }
+                }, 0);
             }
         });
+
         $(document).on('submit', '.product-enquiry', function (e) {
             e.preventDefault();
-            var str = $(this).serialize();
+            var form = $(this);
+            var submitBtn = form.find('input[type="submit"], button[type="submit"]');
+            var originalBtnText = submitBtn.is('input') ? submitBtn.val() : submitBtn.text();
+
+            submitBtn.prop('disabled', true);
+            if (submitBtn.is('input')) { submitBtn.val('Submitting...'); } else { submitBtn.text('Submitting...'); }
+
+            var str = form.serialize() + '&_csrf-frontend=' + encodeURIComponent(APP_CONFIG.csrf);
             $.ajax({
                 type: "POST",
-                url: '<?= Yii::$app->homeUrl; ?>site/products-enquiry',
+                url: APP_CONFIG.homeUrl + 'site/products-enquiry',
                 data: str,
                 success: function (data)
                 {
                     if (data == 1) {
-                        $('.prod-success').before('<div id="email-alert" style="color: #28a745;font-weight: 600;">Your Poduct Enquiry Send Successfully</div>');
+                        $('.prod-success').before('<div id="email-alert" style="color: #28a745;font-weight: 600;">Your Product Enquiry Sent Successfully</div>');
+                        setTimeout(function() { location.reload(); }, 2000);
+                    } else {
+                        submitBtn.prop('disabled', false);
+                        if (submitBtn.is('input')) { submitBtn.val(originalBtnText); } else { submitBtn.text(originalBtnText); }
+                        alert("Submission failed. Please try again.");
                     }
-                    $('#name').val("");
-                    $('#email').val("");
-                    $('#phone').val("");
-                    $('#message').val("");
-                    $('#email-alert').delay(2000).fadeOut('slow');
+                },
+                error: function() {
+                    submitBtn.prop('disabled', false);
+                    if (submitBtn.is('input')) { submitBtn.val(originalBtnText); } else { submitBtn.text(originalBtnText); }
+                    alert("A server error occurred. Please try again later.");
                 }
             });
         });
@@ -250,60 +310,92 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
 
        $(document).on('submit', '.brochure-enquiry', function (e) {
             e.preventDefault();
-            var str = $(this).serialize();
-            var res = $("#thirdCaptcha").val();
-            if (res == "" || res == undefined || res.length == 0)
+            var form = $(this);
+            var submitBtn = form.find('input[type="submit"], button[type="submit"]');
+            var originalBtnText = submitBtn.is('input') ? submitBtn.val() : submitBtn.text();
+
+            var res = $("#thirdCaptcha").length > 0 ? $("#thirdCaptcha").val() : "";
+            if (!res)
             {
-                e.preventDefault();
-                if ($("#RecaptchaField3").next(".validation").length == 0) // only add if not added
-                {
-                    $("#RecaptchaField3").after("<div class='validation' style='color:#a94442;font-size: 13px;margin-bottom: 14px;text-align: left;'>Please verify that you are not a robot</div>");
-                }
-            } else {
-                $.ajax({
+                currentForm = form;
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
+                        if ($("#thirdCaptcha").length > 0) $("#thirdCaptcha").val(token);
+                        currentForm.trigger('submit');
+                    });
+                });
+                return;
+            }
+
+            var str = form.serialize() + '&_csrf-frontend=' + encodeURIComponent(APP_CONFIG.csrf);
+            
+            submitBtn.prop('disabled', true);
+            if (submitBtn.is('input')) { submitBtn.val('Submitting...'); } else { submitBtn.text('Submitting...'); }
+
+            $.ajax({
                     type: "POST",
-                    url: '<?= Yii::$app->homeUrl; ?>site/brochure-download',
+                    url: APP_CONFIG.homeUrl + 'site/brochure-download',
                     data: str,
                     success: function (data)
                     {
                         $('.validation').remove();
                         if (data != 0) {
                             window.open(data, '_blank');
+                            location.reload();
+                        } else {
+                            submitBtn.prop('disabled', false);
+                            if (submitBtn.is('input')) { submitBtn.val(originalBtnText); } else { submitBtn.text(originalBtnText); }
+                            alert("Submission failed. Please try again.");
                         }
-                        $('#name').val("");
-                        $('#email').val("");
-                        $('#phone').val("");
-                        $('#message').val("");
-                        $('#videopopup').modal('toggle');
+                    },
+                    error: function() {
+                        submitBtn.prop('disabled', false);
+                        if (submitBtn.is('input')) { submitBtn.val(originalBtnText); } else { submitBtn.text(originalBtnText); }
+                        alert("A server error occurred. Please try again later.");
+                        if ($("#thirdCaptcha").length > 0) $("#thirdCaptcha").val("");
                     }
                 });
-            }
-
         });
 
         $(document).on('submit', '.news-letter', function (e) {
             e.preventDefault();
-            var str = $(this).serialize();
+            var form = $(this);
+            var submitBtn = form.find('input[type="submit"], button[type="submit"], button');
+            var originalBtnText = submitBtn.is('input') ? submitBtn.val() : submitBtn.html();
+
+            submitBtn.prop('disabled', true);
+            if (submitBtn.is('input')) { submitBtn.val('Submitting...'); } else { submitBtn.html('Submitting...'); }
+
+            var str = form.serialize() + '&_csrf-frontend=' + encodeURIComponent(APP_CONFIG.csrf);
             $.ajax({
                 type: "POST",
-                url: '<?= Yii::$app->homeUrl; ?>site/news-letter',
+                url: APP_CONFIG.homeUrl + 'site/news-letter',
                 data: str,
                 success: function (data)
                 {
                     if (data == 1) {
-                        $('.news-letter').append('<div id="newsletter-alert" style="color: #28a745;font-weight: 600;padding-top: 10px;">Your Request Send Successfully</div>');
+                        $('.news-letter').append('<div id="newsletter-alert" style="color: #28a745;font-weight: 600;padding-top: 10px;">Your Request Sent Successfully</div>');
+                        setTimeout(function() { location.reload(); }, 2000);
                     } else if (data == 2) {
-                        $('.news-letter').append('<div id="newsletter-alert" style="color: #28a745;font-weight: 600;padding-top: 10px;">Already Send Rrequest</div>');
+                        $('.news-letter').append('<div id="newsletter-alert" style="color: #28a745;font-weight: 600;padding-top: 10px;">Already Sent Request</div>');
+                        setTimeout(function() { location.reload(); }, 2000);
+                    } else {
+                        submitBtn.prop('disabled', false);
+                        if (submitBtn.is('input')) { submitBtn.val(originalBtnText); } else { submitBtn.html(originalBtnText); }
+                        alert("Submission failed.");
                     }
-                    $('#subscribe-email').val("");
-                    $('#newsletter-alert').delay(2000).fadeOut('slow');
+                },
+                error: function() {
+                    submitBtn.prop('disabled', false);
+                    if (submitBtn.is('input')) { submitBtn.val(originalBtnText); } else { submitBtn.html(originalBtnText); }
+                    alert("A server error occurred. Please try again later.");
                 }
             });
         });
         
         $(document).on('click','.home-page-readmore',function(){
            var url = $(this).data('href');
-           window.location.href='<?= Url::base(); ?>'+url;
+           window.location.href=APP_CONFIG.baseUrl+url;
         });
     });
 
@@ -359,26 +451,4 @@ s0.parentNode.insertBefore(s1,s0);
 
 // <!-- /WhatsHelp.io widget -->
 
-    var CaptchaCallback = function () {
-        var widget1;
-        var widget2;
-        var widget3;
-        if($('#RecaptchaField1').length>0){
-            widget1 = grecaptcha.render('RecaptchaField1', {'sitekey': '6LeV3s8UAAAAAF-aBw62xSSGAQSbRPvcmrVuAAT1', 'callback': correctCaptcha_second});
-        }
-        if($('#RecaptchaField3').length>0){
-            widget2 = grecaptcha.render('RecaptchaField2', {'sitekey': '6LeV3s8UAAAAAF-aBw62xSSGAQSbRPvcmrVuAAT1', 'callback': correctCaptcha_first});
-        }
-        if($('#RecaptchaField3').length>0){
-            widget3 = grecaptcha.render('RecaptchaField3', {'sitekey': '6LeV3s8UAAAAAF-aBw62xSSGAQSbRPvcmrVuAAT1', 'callback': correctCaptcha_third});
-        }
-    };
-    var correctCaptcha_second = function (response) {
-        $("#secondCaptcha").val(response);
-    };
-    var correctCaptcha_first = function (response) {
-        $("#firstCaptcha").val(response);
-    };
-    var correctCaptcha_third = function (response) {
-        $("#thirdCaptcha").val(response);
-    };
+    var currentForm = null;

@@ -378,7 +378,7 @@ $criticalCssPath = Yii::getAlias('@webroot/assets/css/critical.min.css');
                             <div class="form-group">
                                 <!-- separate recaptcha instance for this modal -->
                                 <div class="g-recaptcha-2025"
-                                     data-sitekey="6LeV3s8UAAAAAF-aBw62xSSGAQSbRPvcmrVuAAT1"
+                                     data-sitekey="6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w"
                                      id="RecaptchaField2025"></div>
                                 <input type="hidden" class="hiddenRecaptcha" name="secondCaptcha" id="secondCaptcha2025">
                             </div>
@@ -396,6 +396,7 @@ $criticalCssPath = Yii::getAlias('@webroot/assets/css/critical.min.css');
 
 
         <!-- <script defer src="<?= Yii::$app->homeUrl ?>assets/js/layout-modal.js?v=1.0"></script> -->
+        <script src="https://www.google.com/recaptcha/api.js?render=6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w" async defer></script>
         <?php $this->endBody() ?>
     </body>
 </html>

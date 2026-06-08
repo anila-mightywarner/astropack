@@ -20,7 +20,7 @@ $contact_address = common\models\ContactAddress::find()->where(['status' => 1])-
         <meta name="robots" content="index, follow">
         <link rel="shortcut icon" href="<?= Yii::$app->homeUrl; ?>assets/favicon/icon.png" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit"></script>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w"></script>
         <?php $this->registerCsrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
@@ -717,13 +717,13 @@ $contact_address = common\models\ContactAddress::find()->where(['status' => 1])-
         var widget2;
         var widget3;
         if($('#RecaptchaField1').length>0){
-            widget1 = grecaptcha.render('RecaptchaField1', {'sitekey': '6LeV3s8UAAAAAF-aBw62xSSGAQSbRPvcmrVuAAT1', 'callback': correctCaptcha_second});
+            widget1 = grecaptcha.render('RecaptchaField1', {'sitekey': '6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', 'callback': correctCaptcha_second});
         }
         if($('#RecaptchaField3').length>0){
-            widget2 = grecaptcha.render('RecaptchaField2', {'sitekey': '6LeV3s8UAAAAAF-aBw62xSSGAQSbRPvcmrVuAAT1', 'callback': correctCaptcha_first});
+            widget2 = grecaptcha.render('RecaptchaField2', {'sitekey': '6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', 'callback': correctCaptcha_first});
         }
         if($('#RecaptchaField3').length>0){
-            widget3 = grecaptcha.render('RecaptchaField3', {'sitekey': '6LeV3s8UAAAAAF-aBw62xSSGAQSbRPvcmrVuAAT1', 'callback': correctCaptcha_third});
+            widget3 = grecaptcha.render('RecaptchaField3', {'sitekey': '6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', 'callback': correctCaptcha_third});
         }
     };
     var correctCaptcha_second = function (response) {

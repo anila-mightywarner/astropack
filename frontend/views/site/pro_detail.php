@@ -294,7 +294,7 @@ $(document).ready(function() {
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <div class="g-recaptcha-second"
-                                                    data-sitekey="6LeV3s8UAAAAAF-aBw62xSSGAQSbRPvcmrVuAAT1"
+                                                    data-sitekey="6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w"
                                                     id="RecaptchaField1"></div>
                                                 <input type="hidden" class="hiddenRecaptcha" name="secondCaptcha"
                                                     id="secondCaptcha">
@@ -404,7 +404,7 @@ $(document).ready(function() {
                         </div>
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <div class="g-recaptcha-first" data-sitekey="6LeV3s8UAAAAAF-aBw62xSSGAQSbRPvcmrVuAAT1"
+                                <div class="g-recaptcha-first" data-sitekey="6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w"
                                     id="RecaptchaField2"></div>
                                 <input type="hidden" class="hiddenRecaptcha" name="firstCaptcha" id="firstCaptcha">
                             </div>
@@ -478,7 +478,7 @@ $(window).scroll(function() {
 
                                     <div class="col-md-12">
                                         <div class="g-recaptcha-third"
-                                            data-sitekey="6LeV3s8UAAAAAF-aBw62xSSGAQSbRPvcmrVuAAT1"
+                                            data-sitekey="6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w"
                                             id="RecaptchaField3"></div>
                                         <input type="hidden" class="hiddenRecaptcha" name="thirdCaptcha"
                                             id="thirdCaptcha">
