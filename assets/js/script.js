@@ -171,13 +171,21 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
             
             if (!res && !res2025) {
                 currentForm = form;
-                grecaptcha.ready(function() {
-                    grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
-                        if ($("#secondCaptcha").length > 0) $("#secondCaptcha").val(token);
-                        if ($("#secondCaptcha2025").length > 0) $("#secondCaptcha2025").val(token);
-                        currentForm.trigger('submit');
+                try {
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
+                            if ($("#secondCaptcha").length > 0) $("#secondCaptcha").val(token);
+                            if ($("#secondCaptcha2025").length > 0) $("#secondCaptcha2025").val(token);
+                            currentForm.trigger('submit');
+                        }).catch(function(error) {
+                            console.error("reCAPTCHA Execute Error:", error);
+                            alert("reCAPTCHA verification failed. Check the console for details.");
+                        });
                     });
-                });
+                } catch (e) {
+                    console.error("reCAPTCHA Ready Error:", e);
+                    alert("reCAPTCHA is not loaded properly. Refresh the page.");
+                }
                 return;
             }
 
@@ -225,12 +233,20 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
             {
                 e.preventDefault();
                 currentForm = form;
-                grecaptcha.ready(function() {
-                    grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
-                        if ($("#secondCaptcha").length > 0) $("#secondCaptcha").val(token);
-                        currentForm.trigger('submit');
+                try {
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
+                            if ($("#secondCaptcha").length > 0) $("#secondCaptcha").val(token);
+                            currentForm.trigger('submit');
+                        }).catch(function(error) {
+                            console.error("reCAPTCHA Execute Error:", error);
+                            alert("reCAPTCHA verification failed. Check the console for details.");
+                        });
                     });
-                });
+                } catch (e) {
+                    console.error("reCAPTCHA Ready Error:", e);
+                    alert("reCAPTCHA is not loaded properly. Refresh the page.");
+                }
                 return;
             } else {
                 $('.validation').remove();
@@ -251,12 +267,20 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
             {
                 e.preventDefault();
                 currentForm = form;
-                grecaptcha.ready(function() {
-                    grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
-                        if ($("#firstCaptcha").length > 0) $("#firstCaptcha").val(token);
-                        currentForm.trigger('submit');
+                try {
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
+                            if ($("#firstCaptcha").length > 0) $("#firstCaptcha").val(token);
+                            currentForm.trigger('submit');
+                        }).catch(function(error) {
+                            console.error("reCAPTCHA Execute Error:", error);
+                            alert("reCAPTCHA verification failed. Check the console for details.");
+                        });
                     });
-                });
+                } catch (e) {
+                    console.error("reCAPTCHA Ready Error:", e);
+                    alert("reCAPTCHA is not loaded properly. Refresh the page.");
+                }
                 return;
             } else {
                 $('.validation').remove();
@@ -318,12 +342,20 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
             if (!res)
             {
                 currentForm = form;
-                grecaptcha.ready(function() {
-                    grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
-                        if ($("#thirdCaptcha").length > 0) $("#thirdCaptcha").val(token);
-                        currentForm.trigger('submit');
+                try {
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
+                            if ($("#thirdCaptcha").length > 0) $("#thirdCaptcha").val(token);
+                            currentForm.trigger('submit');
+                        }).catch(function(error) {
+                            console.error("reCAPTCHA Execute Error:", error);
+                            alert("reCAPTCHA verification failed. Check the console for details.");
+                        });
                     });
-                });
+                } catch (e) {
+                    console.error("reCAPTCHA Ready Error:", e);
+                    alert("reCAPTCHA is not loaded properly. Refresh the page.");
+                }
                 return;
             }
 
