@@ -173,14 +173,19 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
                 currentForm = form;
                 try {
                     grecaptcha.ready(function() {
-                        grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
-                            if ($("#secondCaptcha").length > 0) $("#secondCaptcha").val(token);
-                            if ($("#secondCaptcha2025").length > 0) $("#secondCaptcha2025").val(token);
-                            currentForm.trigger('submit');
-                        }).catch(function(error) {
-                            console.error("reCAPTCHA Execute Error:", error);
-                            alert("reCAPTCHA verification failed. Check the console for details.");
-                        });
+                        try {
+                            grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
+                                if ($("#secondCaptcha").length > 0) $("#secondCaptcha").val(token);
+                                if ($("#secondCaptcha2025").length > 0) $("#secondCaptcha2025").val(token);
+                                currentForm.trigger('submit');
+                            }).catch(function(error) {
+                                console.error("reCAPTCHA Execute Error:", error);
+                                alert("reCAPTCHA verification failed. Check the console for details.");
+                            });
+                        } catch (innerError) {
+                            console.error("reCAPTCHA API Error:", innerError);
+                            alert("reCAPTCHA API Error: This usually happens if a v2 Invisible key is used instead of a v3 key. Please check your Google reCAPTCHA Admin Console and ensure the key is explicitly 'reCAPTCHA v3'.");
+                        }
                     });
                 } catch (e) {
                     console.error("reCAPTCHA Ready Error:", e);
@@ -235,13 +240,18 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
                 currentForm = form;
                 try {
                     grecaptcha.ready(function() {
-                        grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
-                            if ($("#secondCaptcha").length > 0) $("#secondCaptcha").val(token);
-                            currentForm.trigger('submit');
-                        }).catch(function(error) {
-                            console.error("reCAPTCHA Execute Error:", error);
-                            alert("reCAPTCHA verification failed. Check the console for details.");
-                        });
+                        try {
+                            grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
+                                if ($("#secondCaptcha").length > 0) $("#secondCaptcha").val(token);
+                                currentForm.trigger('submit');
+                            }).catch(function(error) {
+                                console.error("reCAPTCHA Execute Error:", error);
+                                alert("reCAPTCHA verification failed. Check the console for details.");
+                            });
+                        } catch (innerError) {
+                            console.error("reCAPTCHA API Error:", innerError);
+                            alert("reCAPTCHA API Error: This usually happens if a v2 Invisible key is used instead of a v3 key. Please check your Google reCAPTCHA Admin Console and ensure the key is explicitly 'reCAPTCHA v3'.");
+                        }
                     });
                 } catch (e) {
                     console.error("reCAPTCHA Ready Error:", e);
@@ -344,13 +354,18 @@ document.addEventListener("DOMContentLoaded", function() {var lazyImages = docum
                 currentForm = form;
                 try {
                     grecaptcha.ready(function() {
-                        grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
-                            if ($("#thirdCaptcha").length > 0) $("#thirdCaptcha").val(token);
-                            currentForm.trigger('submit');
-                        }).catch(function(error) {
-                            console.error("reCAPTCHA Execute Error:", error);
-                            alert("reCAPTCHA verification failed. Check the console for details.");
-                        });
+                        try {
+                            grecaptcha.execute('6LfkXRMtAAAAAD8IXYU1IekcgXB1IfBjUeRLzb4w', {action: 'submit'}).then(function(token) {
+                                if ($("#thirdCaptcha").length > 0) $("#thirdCaptcha").val(token);
+                                currentForm.trigger('submit');
+                            }).catch(function(error) {
+                                console.error("reCAPTCHA Execute Error:", error);
+                                alert("reCAPTCHA verification failed. Check the console for details.");
+                            });
+                        } catch (innerError) {
+                            console.error("reCAPTCHA API Error:", innerError);
+                            alert("reCAPTCHA API Error: This usually happens if a v2 Invisible key is used instead of a v3 key. Please check your Google reCAPTCHA Admin Console and ensure the key is explicitly 'reCAPTCHA v3'.");
+                        }
                     });
                 } catch (e) {
                     console.error("reCAPTCHA Ready Error:", e);
